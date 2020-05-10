@@ -1,0 +1,83 @@
+<div class="bg-dark t">
+<h4 class="bg-dark text-white pl-3">Jobs and Services in Germany</h4> 
+   <div class="row">
+<section class="col-md-12 rounded">
+      
+        <form action="/jobdata/insertjob" method="post" class="p-4">
+          <h4 class="pb-2">Insert Data of Jobs and Services</h4>
+            <div class="input">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" class="rounded">
+            </div>
+            <div class="input">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" class="rounded">
+            </div>
+            <div class="input">
+                <label for="authors">Authors</label>
+                <input type="text" id="authors" name="authors" class="rounded">
+            </div>
+            <button class="btn btn-dark">Insert</button>
+        </form>
+<form class="p-4">
+        <h4>Get Archive of Jobs and Services</h4>
+        <a class="btn btn-dark" href="/jobdata/get-datajob">Press</a>
+</form>      
+        <div>
+            {{# each itemssss }}
+            <article class="item">
+                <div>Title: {{ this.title }}</div>
+                <div>description: {{ this.description }}</div>
+                <div>authors: {{ this.authors }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+            {{/each}}
+        </div>
+
+    </section>
+</div>
+
+    <div class="row">
+    <section class="col-md-12 rounded pl-4">
+    {{!--  <h4 class="row p-4">Search inside Archive of Jobs and Services</h4>
+     <div class="row"> --}}
+         
+        <form action="/jobdata/search-datajob" method="post" class="p-4">
+         <h4 class="pb-2">Search inside Archive of Jobs and Services</h4>
+            <div class="input pb-1">
+                <label for="title">Titles</label>
+                <input type="text" id="wordd" name="wordd" class="rounded">
+            </div>
+            <button class="btn btn-dark" >search <i class="fa fa-search"></i></button>
+            <div>
+                {{# each itemsss }}
+                <article class="item">
+                    <div>Titlejob: {{ this.title }}</div>
+                    <div>descriptionjob: {{ this.description }}</div>
+                    <div>authorsjob: {{ this.authors }}</div>
+                    <div>ID: {{ this._id }}</div>
+                </article>
+                {{/each}}
+            </div>
+        </form>
+         <form action="/jobdata/search-datajobb" method="post" class="p-4">
+            <div class="input pb-1">
+                <label for="description">Descriptions</label>
+              <input type="text" id="worddd" name="worddd" class="rounded">
+            </div>
+             <button class="btn btn-dark" >search <i class="fa fa-search"></i></button>
+            <div>
+                {{# each itemsssd }}
+                <article class="item">
+                    <div>Title: {{ this.title }}</div>
+                    <div>description: {{ this.description }}</div>
+                    <div>authors: {{ this.authors }}</div>
+                    <div>ID: {{ this._id }}</div>
+                </article>
+                {{/each}}
+            </div>
+        </form>  
+        {{!-- </div> --}}
+    </section>
+</div>
+</div>
